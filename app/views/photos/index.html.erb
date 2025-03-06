@@ -1,0 +1,11 @@
+<%= form_with url: :root, method: :get do |form| %>
+  <%= form.label :user_tag %>
+  <%= form.text_field :user_tag %>
+  <%= form.submit "Find Photos" %>
+<% end %>
+
+<% if !@user.nil? %>
+  <% @images.each do |image| %>
+    <%= image_tag(image[:urls][:small]) %>
+  <% end %>
+<% end %>
